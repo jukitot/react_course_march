@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import UserComponent from "./components/UserComponent/UserComponent";
 const firstDiv = <div>Hello</div>
@@ -12,7 +12,15 @@ function App() {
           <UserComponent
               name={'Ihor'}
               nickname={'dev'}
-              email={'oioio@gmail.com'}/>
+              email={'oioio@gmail.com'}
+              element={firstDiv}
+          />
+          <UserComponent
+              name={'ne Ihor'}
+              nickname={'ne dev'}
+              email={'nema'}
+              element={firstDiv}
+          />
 
 
       </>

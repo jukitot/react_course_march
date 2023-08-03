@@ -6,8 +6,8 @@ const UserComponent = (props) => {
             <h1>{name}</h1>
             <h1>{nickname}</h1>
             <h1>{email}</h1>
-            <h1>hello</h1>
-            <h2>lesson-1</h2>
+
+
         </div>
     )
 }

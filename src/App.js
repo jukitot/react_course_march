@@ -3,12 +3,15 @@ import './App.css';
 import UserComponent from "./components/UserContainer/UserComponent/UserComponent";
 import {users, users1} from "./assets/mockData/users";
 import UserContainer from "./components/UserContainer/UserContainer";
+import {useState} from "react";
 const firstDiv = <div>Hello</div>
 function App() {
+    const [show, setShow] = useState(true)
 
   return (
       <>
-          <UserContainer/>
+          <p>{show ? "Show" : "Hidden"}</p>
+          {show && <UserContainer/>}
 
 
         {/*{firstDiv}*/}

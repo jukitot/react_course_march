@@ -6,12 +6,15 @@ import UserContainer from "./components/UserContainer/UserContainer";
 import {useState} from "react";
 const firstDiv = <div>Hello</div>
 function App() {
+    console.log('app render');
     const [show, setShow] = useState(true)
+    // setTimeout(() => setShow(false), 5000)
 
   return (
       <>
-          <p>{show ? "Show" : "Hidden"}</p>
-          {show && <UserContainer/>}
+          {/*<p>{show ? "Show" : "Hidden"}</p>*/}
+          {/*{show && <UserContainer/>}*/}
+          <UserContainer/>
 
 
         {/*{firstDiv}*/}

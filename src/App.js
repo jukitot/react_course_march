@@ -13,7 +13,7 @@ function App() {
               name={'Ihor'}
               nickname={'dev'}
               email={'oioio@gmail.com'}/>
-
+      {/*add lesson 2*/}
 
       </>
   );

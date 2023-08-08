@@ -3,7 +3,7 @@ import styles from "./UserComponent.module.scss";
 
 const UserComponent = (props) => {
     const {user, handleClick, handleDelete} = props
-    console.log(props);
+    // console.log(props);
     return(
         <div className={styles.container}>
             <h6>{user.name}</h6>

@@ -2,34 +2,26 @@ import UserComponent from "./UserComponent/UserComponent";
 import {useEffect, useState} from "react";
 
 
-const UserContainer = () => {
+const UserContainer = ({users, smth, handleClick, handleDelete}) => {
 
-    const [users, setUsers] = useState([])
-    const [errors, setErrors] = useState()
-    const [smth, setSmth] = useState('qqqq')
 
-    useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then((res) => res.json())
-            .then((users) =>{
-                setUsers(users);
-            setSmth('Ihor')
-            })
-            .catch((errors) => console.log(setErrors(errors.response)))
-            .finally(() => console.log('Promises finished'))
-    }, [])
 
-const handleClick = (value) => {
-        alert(`User id is: ${value} `)
-        // alert(`User id is:`)
-}
-const handleDelete = (id) => {
-        setUsers([...users].filter((user) => user.id !== id))
 
-}
+
+    // useEffect(() => {
+    //     fetch('https://jsonplaceholder.typicode.com/users')
+    //         .then((res) => res.json())
+    //         .then((users) =>{
+    //             setUsers(users);
+    //         setSmth('Ihor')
+    //         })
+    //         .catch((errors) => console.log(setErrors(errors.response)))
+    //         .finally(() => console.log('Promises finished'))
+    // }, [])
+
 
     return (
-<>
+<div>
     <h1>Hello</h1>
     {smth && <p>{smth}</p>}
     {users.map((user, id) => {
@@ -41,7 +33,7 @@ const handleDelete = (id) => {
             handleDelete={handleDelete}/>
         )
     })}
-</>
+</div>
     )
 }
 export default UserContainer;

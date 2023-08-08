@@ -1,8 +1,15 @@
 import styles from "./UserComponent.module.scss";
+import {useContext} from "react";
+import {UserContext} from "../../../App.js";
+import {HAHAContext} from "../UserContainer";
 
 
-const UserComponent = (props) => {
-    const {user, handleClick, handleDelete} = props
+const UserComponent = ({user}) => {
+
+    const {handleClick, handleDelete} = useContext(UserContext)
+    const haha = useContext(HAHAContext)
+    console.log(haha);
+
     // console.log(props);
     return(
         <div className={styles.container}>

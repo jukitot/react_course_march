@@ -1,10 +1,12 @@
 import UserComponent from "./UserComponent/UserComponent";
-import {useEffect, useState} from "react";
+import {createContext, useContext, useEffect, useState} from "react";
+import {UserContext} from "../../App";
+
+export const HAHAContext = createContext()
+const UserContainer = () => {
 
 
-const UserContainer = ({users, smth, handleClick, handleDelete}) => {
-
-
+const {users, smth} = useContext(UserContext)
 
 
 
@@ -21,19 +23,21 @@ const UserContainer = ({users, smth, handleClick, handleDelete}) => {
 
 
     return (
+        <HAHAContext.Provider value={'haha'}>
 <div>
     <h1>Hello</h1>
     {smth && <p>{smth}</p>}
     {users.map((user, id) => {
         user.phone = '+' + user.phone
-        return( <UserComponent
+        return(
+            <UserComponent
             key={id}
             user={user}
-            handleClick={handleClick}
-            handleDelete={handleDelete}/>
+            />
         )
     })}
 </div>
+        </HAHAContext.Provider>
     )
 }
 export default UserContainer;

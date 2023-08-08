@@ -3,8 +3,11 @@ import './App.css';
 import UserComponent from "./components/UserContainer/UserComponent/UserComponent";
 import {users, users1} from "./assets/mockData/users";
 import UserContainer from "./components/UserContainer/UserContainer";
-import {useEffect, useState} from "react";
+import {createContext, useEffect, useState} from "react";
 const firstDiv = <div>Hello</div>
+
+
+export const UserContext = createContext(null)
 function App() {
     const [users, setUsers] = useState([])
     const [smth, setSmth] = useState('qqqq')
@@ -45,25 +48,16 @@ function App() {
         setUsers([...users].filter((user) => user.id !== id))
 
     }
-
+const contextValue = {users, smth, handleClick, handleDelete}
   return (
+      <UserContext.Provider value={contextValue}>
+
       <div style={{display:"flex"}}>
 
-          <UserContainer
-              users={users}
-                smth={smth}
-              handleClick={handleClick}
-              handleDelete={handleDelete}
-          />
-          <UserContainer
-              users={users}
-                smth={smth}
-              handleClick={handleClick}
-              handleDelete={handleDelete}
-          />
-
+          <UserContainer/>
+          <UserContainer/>
       </div>
-
+</UserContext.Provider>
   );
 }
 

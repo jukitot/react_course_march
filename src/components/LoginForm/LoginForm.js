@@ -9,15 +9,11 @@ const LoginForm = ({handleSubmit,emailRef, passwordRef}) => {
 
             <label htmlFor="">Email:
                 <br/>
-                {/*<input type="email" value={email} onChange={handleEmailChange} autoComplete={'off'}/>*/}
-                {/*<input type="email" value={formValues.email} onChange={(e)=>handleFormChange(e, 'email')} autoComplete={'off'}/>*/}
                 <input type="email" ref={emailRef}/>
             </label>
 
             <label htmlFor="">Password:
                 <br/>
-                {/*<input type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>*/}
-                {/*<input type="password" value={formValues.password} onChange={(e)=>handleFormChange(e, 'password')}/>*/}
                 <input type="password" ref={passwordRef}/>
             </label>
 

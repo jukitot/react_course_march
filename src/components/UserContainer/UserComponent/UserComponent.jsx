@@ -23,5 +23,5 @@ const UserComponent = ({user}) => {
         </div>
     )
 }
-//lesson 4
+
 export default UserComponent;

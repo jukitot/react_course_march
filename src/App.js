@@ -4,6 +4,7 @@ import UserComponent from "./components/UserContainer/UserComponent/UserComponen
 import {users, users1} from "./assets/mockData/users";
 import UserContainer from "./components/UserContainer/UserContainer";
 import {createContext, useEffect, useState} from "react";
+import LoginPage from "./pages/LoginPage/LoginPage";
 const firstDiv = <div>Hello</div>
 
 
@@ -51,12 +52,9 @@ function App() {
 const contextValue = {users, smth, handleClick, handleDelete}
   return (
       <UserContext.Provider value={contextValue}>
-
-      <div style={{display:"flex"}}>
-
-          <UserContainer/>
-          <UserContainer/>
-      </div>
+          {/*<UserContainer/>*/}
+          {/*<UserContainer/>*/}
+          <LoginPage/>
 </UserContext.Provider>
   );
 }
